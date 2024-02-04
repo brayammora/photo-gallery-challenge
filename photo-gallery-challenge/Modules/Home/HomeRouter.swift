@@ -7,22 +7,24 @@
 
 import UIKit
 
-final class HomeRouter {
-    private var navigationController: UINavigationController?
+final class HomeRouter: BaseRouter {
     
-    init(navigation: UINavigationController) {
-        self.navigationController = navigation
+    init() {
         let viewController = HomeViewController()
+        super.init(viewController: viewController)
         let interactor = HomeInteractor()
         let presenter = HomePresenter(interactor: interactor, router: self, view: viewController)
         viewController.presenter = presenter
-        navigation.pushViewController(viewController, animated: false)
     }
 }
 
 // MARK: - HomeRouterInterface -
 extension HomeRouter: HomeRouterInterface {
     func navigate(to option: HomeNavigationOption) {
-        
+        switch option {
+        case .detailPhoto(let photo):
+            let detailRouter = DetailRouter(photo)
+            navigationController?.pushViewController(detailRouter.viewController, animated: true)
+        }
     }
 }

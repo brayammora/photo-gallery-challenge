@@ -12,11 +12,9 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Private properties -
     private lazy var deleteAllButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(configuration: .filled(), primaryAction: nil)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(presenter?.deleteButtonText, for: .normal)
-        button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 12.0
         button.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
         return button
     }()
@@ -42,8 +40,15 @@ final class HomeViewController: UIViewController {
         presenter?.getNextPage()
     }
     
-    // MARK: - Private methods -
-    private func configureConstraints() {
+    // MARK: - Actions -
+    @objc func deleteAction(sender: UIButton!) {
+        presenter?.deleteAllLocalRecords()
+    }
+}
+
+// MARK: - Private methods -
+private extension HomeViewController {
+    func configureConstraints() {
         view.addSubview(deleteAllButton)
         view.addSubview(collectionView)
         let constraints = [
@@ -56,11 +61,6 @@ final class HomeViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -4)
         ]
         NSLayoutConstraint.activate(constraints)
-    }
-    
-    // MARK: - Actions -
-    @objc func deleteAction(sender: UIButton!) {
-        presenter?.deleteAllLocalRecords()
     }
 }
 

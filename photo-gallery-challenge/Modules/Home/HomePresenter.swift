@@ -18,7 +18,7 @@ final class HomePresenter {
         }
     }
     
-    init(interactor: HomeInteractor, router: HomeRouter, view: HomeViewInterface) {
+    init(interactor: HomeInteractorInterface, router: HomeRouterInterface, view: HomeViewInterface) {
         self.interactor = interactor
         self.router = router
         self.view = view

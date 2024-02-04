@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct PhotoViewModel {
     let title: String
@@ -63,6 +64,7 @@ final class PhotoViewCell: UICollectionViewCell {
     // MARK: - Public methods -
     func configure(with model: PhotoViewModel) {
         photoTitle.text = model.title
-        thumbnailImageView.downloadImage(from: model.thumbnailUrl)
+        let url = URL(string: model.thumbnailUrl)
+        thumbnailImageView.kf.setImage(with: url)
     }
 }

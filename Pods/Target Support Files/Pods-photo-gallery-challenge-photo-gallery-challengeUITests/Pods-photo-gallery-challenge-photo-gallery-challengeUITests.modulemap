@@ -1,0 +1,6 @@
+framework module Pods_photo_gallery_challenge_photo_gallery_challengeUITests {
+  umbrella header "Pods-photo-gallery-challenge-photo-gallery-challengeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
