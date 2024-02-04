@@ -36,9 +36,9 @@
 		55964EF52B6C65C200C41B26 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55964EF42B6C65C200C41B26 /* HomePresenter.swift */; };
 		55964EF72B6C670C00C41B26 /* HomeInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55964EF62B6C670C00C41B26 /* HomeInterfaces.swift */; };
 		55AE44F62B6EA99F001547F5 /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE44F52B6EA99F001547F5 /* Describable.swift */; };
-		55AE44F82B6EAA13001547F5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE44F72B6EAA13001547F5 /* UIImageView+Extensions.swift */; };
 		55BFADC32B6EA66B0021859C /* CollectionViewHorizontalCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFADC22B6EA66B0021859C /* CollectionViewHorizontalCustom.swift */; };
 		55BFADC52B6EA6B40021859C /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFADC42B6EA6B40021859C /* PhotoViewCell.swift */; };
+		55D98EB92B6FF6F500BA23FF /* gallery-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D98EB82B6FF6F500BA23FF /* gallery-icon.png */; };
 		55E195762B6D275200922FBB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195752B6D275200922FBB /* HomeViewController.swift */; };
 		55E1957C2B6D8F7000922FBB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E1957B2B6D8F7000922FBB /* CoreDataStack.swift */; };
 		55E195822B6D92E500922FBB /* CoreDataPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195812B6D92E500922FBB /* CoreDataPhotoManager.swift */; };
@@ -101,9 +101,9 @@
 		55964EF42B6C65C200C41B26 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		55964EF62B6C670C00C41B26 /* HomeInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaces.swift; sourceTree = "<group>"; };
 		55AE44F52B6EA99F001547F5 /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
-		55AE44F72B6EAA13001547F5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		55BFADC22B6EA66B0021859C /* CollectionViewHorizontalCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalCustom.swift; sourceTree = "<group>"; };
 		55BFADC42B6EA6B40021859C /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		55D98EB82B6FF6F500BA23FF /* gallery-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gallery-icon.png"; sourceTree = "<group>"; };
 		55E195752B6D275200922FBB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55E1957B2B6D8F7000922FBB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		55E195812B6D92E500922FBB /* CoreDataPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPhotoManager.swift; sourceTree = "<group>"; };
@@ -205,6 +205,7 @@
 		5592E4AE2B6EDE9300CF8BDC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55D98EB72B6FF6C600BA23FF /* Images */,
 				5592E4AF2B6EDE9E00CF8BDC /* ErrorStrings.swift */,
 			);
 			path = Resources;
@@ -280,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				55AE44F52B6EA99F001547F5 /* Describable.swift */,
-				55AE44F72B6EAA13001547F5 /* UIImageView+Extensions.swift */,
 				5592E4A82B6EB45600CF8BDC /* UIViewController+Extensions.swift */,
 			);
 			path = Extension;
@@ -294,6 +294,14 @@
 				5592E4BE2B6EED0D00CF8BDC /* BaseRouter.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		55D98EB72B6FF6C600BA23FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				55D98EB82B6FF6F500BA23FF /* gallery-icon.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		55E195742B6D274000922FBB /* View */ = {
@@ -355,7 +363,6 @@
 				AAAFD2D9DA2A835D771D1D57 /* Pods-photo-gallery-challengeTests.debug.xcconfig */,
 				B3B2B0245FE1D0C2AE829125 /* Pods-photo-gallery-challengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -469,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				557A73792B6C581E0004E978 /* LaunchScreen.storyboard in Resources */,
+				55D98EB92B6FF6F500BA23FF /* gallery-icon.png in Resources */,
 				5592E4C42B6EF2F800CF8BDC /* DetailViewController.xib in Resources */,
 				557A73762B6C581E0004E978 /* Assets.xcassets in Resources */,
 			);
@@ -615,7 +623,6 @@
 				55E195A92B6DA0EF00922FBB /* NetworkManager.swift in Sources */,
 				55964EF72B6C670C00C41B26 /* HomeInterfaces.swift in Sources */,
 				5592E4A92B6EB45600CF8BDC /* UIViewController+Extensions.swift in Sources */,
-				55AE44F82B6EAA13001547F5 /* UIImageView+Extensions.swift in Sources */,
 				5592E4AB2B6EC08100CF8BDC /* LoadingScreen.swift in Sources */,
 				5592E4B42B6EE85B00CF8BDC /* DetailRouter.swift in Sources */,
 				554CFF4B2B6E98E800D63C5E /* GalleryPhotoLocal+CoreDataClass.swift in Sources */,
