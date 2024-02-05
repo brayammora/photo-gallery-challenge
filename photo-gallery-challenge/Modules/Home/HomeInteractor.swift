@@ -73,12 +73,10 @@ private extension HomeInteractor {
     }
     
     func savePhotosToLocal(_ photos: [GalleryPhoto]) {
-        Task {
-            do {
-                try localStorageManager.saveOrUpdatePhoto(photos)
-            } catch {
-                print("error saving data")
-            }
+        do {
+            try localStorageManager.saveOrUpdatePhoto(photos)
+        } catch {
+            print("error saving data")
         }
     }
 }

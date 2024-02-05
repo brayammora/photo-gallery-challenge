@@ -16,7 +16,6 @@
 		557A736C2B6C58180004E978 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557A736B2B6C58180004E978 /* SceneDelegate.swift */; };
 		557A73762B6C581E0004E978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557A73752B6C581E0004E978 /* Assets.xcassets */; };
 		557A73792B6C581E0004E978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557A73772B6C581E0004E978 /* LaunchScreen.storyboard */; };
-		557A73842B6C581F0004E978 /* photo_gallery_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557A73832B6C581F0004E978 /* photo_gallery_challengeTests.swift */; };
 		557A738E2B6C581F0004E978 /* photo_gallery_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557A738D2B6C581F0004E978 /* photo_gallery_challengeUITests.swift */; };
 		557A73902B6C581F0004E978 /* photo_gallery_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557A738F2B6C581F0004E978 /* photo_gallery_challengeUITestsLaunchTests.swift */; };
 		5592E4A92B6EB45600CF8BDC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592E4A82B6EB45600CF8BDC /* UIViewController+Extensions.swift */; };
@@ -35,6 +34,14 @@
 		55964EF32B6C65AB00C41B26 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55964EF22B6C65AB00C41B26 /* HomeRouter.swift */; };
 		55964EF52B6C65C200C41B26 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55964EF42B6C65C200C41B26 /* HomePresenter.swift */; };
 		55964EF72B6C670C00C41B26 /* HomeInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55964EF62B6C670C00C41B26 /* HomeInterfaces.swift */; };
+		5596FDF72B7051130076DED6 /* MockHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FDF62B7051130076DED6 /* MockHomeInteractor.swift */; };
+		5596FDF92B7051D80076DED6 /* MockHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FDF82B7051D80076DED6 /* MockHomeRouter.swift */; };
+		5596FDFB2B7052660076DED6 /* MockHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FDFA2B7052660076DED6 /* MockHomeView.swift */; };
+		5596FDFD2B7054A60076DED6 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FDFC2B7054A60076DED6 /* HomeInteractorTests.swift */; };
+		5596FE042B70559D0076DED6 /* MockServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FE032B70559D0076DED6 /* MockServiceManager.swift */; };
+		5596FE062B7055BB0076DED6 /* MockLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FE052B7055BB0076DED6 /* MockLocalStorageManager.swift */; };
+		5596FE082B7058F80076DED6 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596FE072B7058F80076DED6 /* FileManager+Extensions.swift */; };
+		5596FE0D2B7066FB0076DED6 /* GalleryPhoto.json in Resources */ = {isa = PBXBuildFile; fileRef = 5596FE0C2B7066FB0076DED6 /* GalleryPhoto.json */; };
 		55AE44F62B6EA99F001547F5 /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE44F52B6EA99F001547F5 /* Describable.swift */; };
 		55BFADC32B6EA66B0021859C /* CollectionViewHorizontalCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFADC22B6EA66B0021859C /* CollectionViewHorizontalCustom.swift */; };
 		55BFADC52B6EA6B40021859C /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFADC42B6EA6B40021859C /* PhotoViewCell.swift */; };
@@ -46,6 +53,7 @@
 		55E195A92B6DA0EF00922FBB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195A82B6DA0EF00922FBB /* NetworkManager.swift */; };
 		55E195AD2B6DA1DA00922FBB /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195AC2B6DA1DA00922FBB /* BaseNetworkService.swift */; };
 		55E195AF2B6DB30800922FBB /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195AE2B6DB30700922FBB /* ConnectivityService.swift */; };
+		55EC997C2B6FFF1900C352DE /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */; };
 		837B9905863ACBEBF1E10C46 /* Pods_photo_gallery_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5026CF3B91EDE0C264F503F /* Pods_photo_gallery_challengeTests.framework */; };
 		D6D10E3AC30C23AB45466B2D /* Pods_photo_gallery_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB60AE2BF9FE80DD5FC2805C /* Pods_photo_gallery_challenge.framework */; };
 /* End PBXBuildFile section */
@@ -80,7 +88,6 @@
 		557A73782B6C581E0004E978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		557A737A2B6C581E0004E978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		557A737F2B6C581F0004E978 /* photo-gallery-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gallery-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		557A73832B6C581F0004E978 /* photo_gallery_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gallery_challengeTests.swift; sourceTree = "<group>"; };
 		557A73892B6C581F0004E978 /* photo-gallery-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gallery-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		557A738D2B6C581F0004E978 /* photo_gallery_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gallery_challengeUITests.swift; sourceTree = "<group>"; };
 		557A738F2B6C581F0004E978 /* photo_gallery_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gallery_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -100,6 +107,14 @@
 		55964EF22B6C65AB00C41B26 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		55964EF42B6C65C200C41B26 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		55964EF62B6C670C00C41B26 /* HomeInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaces.swift; sourceTree = "<group>"; };
+		5596FDF62B7051130076DED6 /* MockHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeInteractor.swift; sourceTree = "<group>"; };
+		5596FDF82B7051D80076DED6 /* MockHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeRouter.swift; sourceTree = "<group>"; };
+		5596FDFA2B7052660076DED6 /* MockHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeView.swift; sourceTree = "<group>"; };
+		5596FDFC2B7054A60076DED6 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		5596FE032B70559D0076DED6 /* MockServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceManager.swift; sourceTree = "<group>"; };
+		5596FE052B7055BB0076DED6 /* MockLocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalStorageManager.swift; sourceTree = "<group>"; };
+		5596FE072B7058F80076DED6 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
+		5596FE0C2B7066FB0076DED6 /* GalleryPhoto.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GalleryPhoto.json; sourceTree = "<group>"; };
 		55AE44F52B6EA99F001547F5 /* Describable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
 		55BFADC22B6EA66B0021859C /* CollectionViewHorizontalCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalCustom.swift; sourceTree = "<group>"; };
 		55BFADC42B6EA6B40021859C /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +126,7 @@
 		55E195A82B6DA0EF00922FBB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		55E195AC2B6DA1DA00922FBB /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		55E195AE2B6DB30700922FBB /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
+		55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		8E430BF2F18118FD2D501A10 /* Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-photo-gallery-challenge-photo-gallery-challengeUITests/Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAAFD2D9DA2A835D771D1D57 /* Pods-photo-gallery-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-gallery-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-photo-gallery-challengeTests/Pods-photo-gallery-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB60AE2BF9FE80DD5FC2805C /* Pods_photo_gallery_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_gallery_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,7 +204,8 @@
 		557A73822B6C581F0004E978 /* photo-gallery-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				557A73832B6C581F0004E978 /* photo_gallery_challengeTests.swift */,
+				5596FE002B70557D0076DED6 /* Common */,
+				5596FDFE2B70555D0076DED6 /* Modules */,
 			);
 			path = "photo-gallery-challengeTests";
 			sourceTree = "<group>";
@@ -277,11 +294,74 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		5596FDF52B7051030076DED6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5596FDF62B7051130076DED6 /* MockHomeInteractor.swift */,
+				5596FDF82B7051D80076DED6 /* MockHomeRouter.swift */,
+				5596FDFA2B7052660076DED6 /* MockHomeView.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5596FDFE2B70555D0076DED6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5596FDFF2B7055680076DED6 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5596FDFF2B7055680076DED6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5596FDFC2B7054A60076DED6 /* HomeInteractorTests.swift */,
+				55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */,
+				5596FDF52B7051030076DED6 /* Mocks */,
+				5596FE092B70593D0076DED6 /* Stubs */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5596FE002B70557D0076DED6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5596FE022B70558F0076DED6 /* Persistence */,
+				5596FE012B7055880076DED6 /* Network */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5596FE012B7055880076DED6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5596FE032B70559D0076DED6 /* MockServiceManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5596FE022B70558F0076DED6 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				5596FE052B7055BB0076DED6 /* MockLocalStorageManager.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		5596FE092B70593D0076DED6 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				5596FE0C2B7066FB0076DED6 /* GalleryPhoto.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		55AE44F42B6EA993001547F5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				55AE44F52B6EA99F001547F5 /* Describable.swift */,
 				5592E4A82B6EB45600CF8BDC /* UIViewController+Extensions.swift */,
+				5596FE072B7058F80076DED6 /* FileManager+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -486,6 +566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5596FE0D2B7066FB0076DED6 /* GalleryPhoto.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +700,7 @@
 				55AE44F62B6EA99F001547F5 /* Describable.swift in Sources */,
 				557A736C2B6C58180004E978 /* SceneDelegate.swift in Sources */,
 				5592E4B82B6EE86D00CF8BDC /* DetailInterfaces.swift in Sources */,
+				5596FE082B7058F80076DED6 /* FileManager+Extensions.swift in Sources */,
 				5592E4BB2B6EE88700CF8BDC /* DetailViewController.swift in Sources */,
 				55E195A92B6DA0EF00922FBB /* NetworkManager.swift in Sources */,
 				55964EF72B6C670C00C41B26 /* HomeInterfaces.swift in Sources */,
@@ -644,7 +726,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				557A73842B6C581F0004E978 /* photo_gallery_challengeTests.swift in Sources */,
+				55EC997C2B6FFF1900C352DE /* HomePresenterTests.swift in Sources */,
+				5596FE042B70559D0076DED6 /* MockServiceManager.swift in Sources */,
+				5596FE062B7055BB0076DED6 /* MockLocalStorageManager.swift in Sources */,
+				5596FDFD2B7054A60076DED6 /* HomeInteractorTests.swift in Sources */,
+				5596FDF92B7051D80076DED6 /* MockHomeRouter.swift in Sources */,
+				5596FDF72B7051130076DED6 /* MockHomeInteractor.swift in Sources */,
+				5596FDFB2B7052660076DED6 /* MockHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
