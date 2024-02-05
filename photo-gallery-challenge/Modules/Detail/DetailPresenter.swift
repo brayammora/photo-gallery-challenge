@@ -44,4 +44,14 @@ extension DetailPresenter: DetailPresenterInterface {
             return .deleteButtton(model: DetailButtonViewModel(buttonText: section.titleHeader))
         }
     }
+    
+    func deleteAction() {
+        interactor.deletePhoto { [weak self] wasDeleted in
+            guard let self = self else { return }
+            if wasDeleted {
+                self.router.backToHome()
+            }
+        }
+        
+    }
 }

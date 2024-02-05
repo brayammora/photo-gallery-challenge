@@ -78,7 +78,14 @@ extension DetailViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.configure(viewModel: model)
+            cell.delegate = self
             return cell
         }
+    }
+}
+
+extension DetailViewController: DetailButtonViewCellProtocol {
+    func buttonAction() {
+        presenter?.deleteAction()
     }
 }

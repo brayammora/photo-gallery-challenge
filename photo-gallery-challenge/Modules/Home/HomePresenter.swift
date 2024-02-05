@@ -12,11 +12,7 @@ final class HomePresenter {
     private let interactor: HomeInteractorInterface
     private let router: HomeRouterInterface
     private weak var view: HomeViewInterface?
-    private var photoList: [GalleryPhoto] = [] {
-        didSet {
-            view?.reloadData()
-        }
-    }
+    private var photoList: [GalleryPhoto] = []
     
     init(interactor: HomeInteractorInterface, router: HomeRouterInterface, view: HomeViewInterface) {
         self.interactor = interactor
@@ -38,6 +34,7 @@ extension HomePresenter: HomePresenterInterface {
             switch response {
             case .success(let photos):
                 self.photoList += photos
+                self.view?.reloadData()
             case .failure(let error):
                 print(error)
                 if self.photoList.isEmpty {

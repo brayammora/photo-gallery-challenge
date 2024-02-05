@@ -7,12 +7,15 @@
 
 import Foundation
 
-protocol DetailRouterInterface { }
+protocol DetailRouterInterface {
+    func backToHome()
+}
 
 protocol DetailInteractorInterface {
     var id: Int { get }
     var title: String { get }
     var url: String { get }
+    func deletePhoto(wasDeletedCompletion: @escaping (Bool) -> Void)
 }
 
 protocol DetailPresenterInterface {
@@ -20,6 +23,7 @@ protocol DetailPresenterInterface {
     var numberOfSections: Int { get }
     func didLoad()
     func getItem(at indexPath: IndexPath) -> DetailTableViewSection?
+    func deleteAction()
 }
 
 protocol DetailViewInterface: AnyObject {

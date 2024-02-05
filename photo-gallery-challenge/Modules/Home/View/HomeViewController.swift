@@ -41,7 +41,7 @@ final class HomeViewController: UIViewController {
     }
     
     // MARK: - Actions -
-    @objc func deleteAction(sender: UIButton!) {
+    @objc private func deleteAction(sender: UIButton!) {
         presenter?.deleteAllLocalRecords()
     }
 }

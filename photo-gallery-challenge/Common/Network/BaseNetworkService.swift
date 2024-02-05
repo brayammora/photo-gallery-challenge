@@ -17,11 +17,14 @@ enum NetworkConstants {
 
 enum Endpoint {
     case getPhotos(page: Int)
+    case deletePhoto(id: Int)
     
     var path: String {
         switch self {
         case .getPhotos(let page):
             return "photos?_page=\(page)"
+        case .deletePhoto(id: let id):
+            return "photos/\(id)"
         }
     }
 }

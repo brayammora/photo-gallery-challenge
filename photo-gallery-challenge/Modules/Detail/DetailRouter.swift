@@ -19,4 +19,10 @@ final class DetailRouter: BaseRouter {
 }
 
 // MARK: - DetailRouterInterface -
-extension DetailRouter: DetailRouterInterface { }
+extension DetailRouter: DetailRouterInterface {
+    func backToHome() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+}
