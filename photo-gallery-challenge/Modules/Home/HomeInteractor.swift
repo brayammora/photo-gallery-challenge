@@ -68,7 +68,11 @@ private extension HomeInteractor {
         let localPhotos = self.getPhotosFromLocal()
         if !localPhotos.isEmpty {
             self.currentPage += 1
-            self.photos = localPhotos
+            if self.photos.isEmpty {
+                self.photos = localPhotos
+            } else {
+                self.photos += localPhotos
+            }
             completion(.success(()))
         } else {
             completion(.failure(.noData))

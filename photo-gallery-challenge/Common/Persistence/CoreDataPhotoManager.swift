@@ -93,9 +93,13 @@ class CoreDataPhotoManager: LocalStorageService {
         let fetchRequest: NSFetchRequest<GalleryPhotoLocal> = GalleryPhotoLocal.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %d", id)
 
-        if let photoToDelete = try managedObjectContext.fetch(fetchRequest).first {
-            managedObjectContext.delete(photoToDelete)
-            try managedObjectContext.save()
+        do {
+            if let photoToDelete = try managedObjectContext.fetch(fetchRequest).first {
+                managedObjectContext.delete(photoToDelete)
+                try managedObjectContext.save()
+            }
+        } catch {
+            throw CustomError.errorOnLocalStorage
         }
     }
     

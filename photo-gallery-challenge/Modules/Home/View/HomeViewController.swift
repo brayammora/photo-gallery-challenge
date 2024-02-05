@@ -69,6 +69,7 @@ extension HomeViewController: HomeViewInterface {
     func reloadData() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+            self.hideLoading()
         }
     }
     

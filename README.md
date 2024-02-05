@@ -1,5 +1,8 @@
 # Photo-gallery-challenge
 
+## How the app works
+Please follow the link to see the video: https://drive.google.com/file/d/1HAGncbYw7XmAqhMNEalHvfQB5EMJy7-f/view?usp=sharing
+
 ## Instalation
 This project requires XCode 13.0, Swift 5.0 and should be run on a device with iOS 15+ then, you should execute `pod install` and `run` the photo-gallery-challenge.xcworkspace file.
 
