@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class DetailInteractor {
     
@@ -13,6 +14,7 @@ final class DetailInteractor {
     private let photo: GalleryPhoto
     private let serviceManager: BaseNetworkService
     private let localStorageManager: LocalStorageService
+    private var cancellables: Set<AnyCancellable> = []
     
     init(_ photo: GalleryPhoto,
          serviceManager: BaseNetworkService = NetworkManager(),
@@ -39,8 +41,22 @@ extension DetailInteractor: DetailInteractorInterface {
                 self.deleteLocalPhoto()
                 wasDeletedCompletion(true)
             case .failure:
-                // Save action for later
+                self.queueDeleteOperation()
                 wasDeletedCompletion(false)
+                break
+            }
+        }
+    }
+    
+    func deletePhotoWithoutQueue() {
+        serviceManager.sendRequest(endpoint: .deletePhoto(id: id),
+                                   of: VoidRequest.self,
+                                   method: .delete) { [weak self] response in
+            guard let self = self else { return }
+            switch response {
+            case .success:
+                self.deleteLocalPhoto()
+            case .failure:
                 break
             }
         }
@@ -52,5 +68,17 @@ extension DetailInteractor: DetailInteractorInterface {
         } catch {
             print("Cannot delete local photo")
         }
+    }
+    
+    private func queueDeleteOperation() {
+        let operation = BlockOperation { [weak self] in
+            guard let self = self else { return }
+            ConnectivityService.shared.completionPublisher
+                .sink { _ in
+                    self.deletePhotoWithoutQueue()
+                }
+                .store(in: &self.cancellables)
+        }
+        QueueOperationManager.shared.addOperation(operation)
     }
 }

@@ -6,18 +6,22 @@
 //
 
 import Network
+import Combine
 
 class ConnectivityService {
     static let shared = ConnectivityService()
-
+    private let subject = PassthroughSubject<Void, Never>()
     private let monitor = NWPathMonitor()
 
+    var completionPublisher: AnyPublisher<Void, Never> {
+        return subject.eraseToAnyPublisher()
+    }
+    
     func startMonitoring() {
-        monitor.pathUpdateHandler = { path in
+        monitor.pathUpdateHandler = { [weak self] path in
+            guard let self = self else { return }
             if path.status == .satisfied {
-                // Hay conexión a Internet
-            } else {
-                // No hay conexión a Internet
+                self.subject.send()
             }
         }
         let queue = DispatchQueue(label: "NetworkMonitor")

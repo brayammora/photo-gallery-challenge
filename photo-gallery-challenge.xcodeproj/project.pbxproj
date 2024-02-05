@@ -56,6 +56,7 @@
 		55E195AF2B6DB30800922FBB /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195AE2B6DB30700922FBB /* ConnectivityService.swift */; };
 		55EC997C2B6FFF1900C352DE /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */; };
 		55F0FCF82B711DFA001DE296 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0FCF72B711DFA001DE296 /* UICollectionView+Extensions.swift */; };
+		55F0FCFB2B712458001DE296 /* QueueOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0FCFA2B712458001DE296 /* QueueOperationManager.swift */; };
 		837B9905863ACBEBF1E10C46 /* Pods_photo_gallery_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5026CF3B91EDE0C264F503F /* Pods_photo_gallery_challengeTests.framework */; };
 		D6D10E3AC30C23AB45466B2D /* Pods_photo_gallery_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB60AE2BF9FE80DD5FC2805C /* Pods_photo_gallery_challenge.framework */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		55E195AE2B6DB30700922FBB /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
 		55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		55F0FCF72B711DFA001DE296 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		55F0FCFA2B712458001DE296 /* QueueOperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueOperationManager.swift; sourceTree = "<group>"; };
 		8E430BF2F18118FD2D501A10 /* Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-photo-gallery-challenge-photo-gallery-challengeUITests/Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAAFD2D9DA2A835D771D1D57 /* Pods-photo-gallery-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-gallery-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-photo-gallery-challengeTests/Pods-photo-gallery-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB60AE2BF9FE80DD5FC2805C /* Pods_photo_gallery_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_gallery_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,7 @@
 		55964EEB2B6C614900C41B26 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				55F0FCF92B712447001DE296 /* Concurrency */,
 				5592E4AE2B6EDE9300CF8BDC /* Resources */,
 				55AE44F42B6EA993001547F5 /* Extension */,
 				55BFADC12B6EA65D0021859C /* UI */,
@@ -427,6 +430,14 @@
 				55E195A62B6D9DAA00922FBB /* GalleryPhoto.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55F0FCF92B712447001DE296 /* Concurrency */ = {
+			isa = PBXGroup;
+			children = (
+				55F0FCFA2B712458001DE296 /* QueueOperationManager.swift */,
+			);
+			path = Concurrency;
 			sourceTree = "<group>";
 		};
 		5764FBF681EDDA685DB91916 /* Frameworks */ = {
@@ -718,6 +729,7 @@
 				55E195762B6D275200922FBB /* HomeViewController.swift in Sources */,
 				55BFADC52B6EA6B40021859C /* PhotoViewCell.swift in Sources */,
 				55E195A72B6D9DAA00922FBB /* GalleryPhoto.swift in Sources */,
+				55F0FCFB2B712458001DE296 /* QueueOperationManager.swift in Sources */,
 				55964EF12B6C659300C41B26 /* HomeInteractor.swift in Sources */,
 				554CFF432B6E986300D63C5E /* PhotoGalleryModel.xcdatamodeld in Sources */,
 				55BFADC32B6EA66B0021859C /* CollectionViewHorizontalCustom.swift in Sources */,
