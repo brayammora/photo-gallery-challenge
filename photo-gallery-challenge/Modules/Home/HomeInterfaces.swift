@@ -8,8 +8,10 @@
 import Foundation
 
 protocol HomeInteractorInterface {
+    var photoList: [GalleryPhoto] { get }
     func getNextPage(completion: @escaping GalleryPhotoCompletion)
     func deleteAllLocalRecords()
+    func resetFromInit()
 }
 
 protocol HomeRouterInterface {

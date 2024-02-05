@@ -7,13 +7,14 @@
 
 import Foundation
 
-typealias GalleryPhotoCompletion = (Result<[GalleryPhoto], CustomError>) -> Void
+typealias GalleryPhotoCompletion = (Result<Void, CustomError>) -> Void
 
 final class HomeInteractor {
     // MARK: - Private properties -
     private let serviceManager: BaseNetworkService
     private let localStorageManager: LocalStorageService
     private var currentPage: Int = 1
+    private var photos: [GalleryPhoto] = []
     
     init(serviceManager: BaseNetworkService = NetworkManager(),
          localStorageManager: LocalStorageService = CoreDataPhotoManager()) {
@@ -24,16 +25,23 @@ final class HomeInteractor {
 
 // MARK: - HomeInteractorInterface -
 extension HomeInteractor: HomeInteractorInterface {
+    var photoList: [GalleryPhoto] { photos }
+    
     func getNextPage(completion: @escaping GalleryPhotoCompletion) {
         serviceManager.sendRequest(endpoint: .getPhotos(page: currentPage),
                                    of: [GalleryPhoto].self,
                                    method: .get) { [weak self] response in
             guard let self = self else { return }
             switch response {
-            case .success(let photos):
+            case .success(let servicePhotos):
                 self.currentPage += 1
-                self.savePhotosToLocal(photos)
-                completion(.success(photos))
+                self.savePhotosToLocal(servicePhotos)
+                if self.photos.isEmpty {
+                    self.photos = servicePhotos
+                } else {
+                    self.photos += servicePhotos
+                }
+                completion(.success(()))
             case .failure:
                 self.checkLocalStorage(completion)
             }
@@ -48,23 +56,26 @@ extension HomeInteractor: HomeInteractorInterface {
         }
         
     }
+    
+    func resetFromInit() {
+        currentPage = 1
+    }
 }
 
 // MARK: - Private Methods -
 private extension HomeInteractor {
     func checkLocalStorage(_ completion: @escaping GalleryPhotoCompletion) {
-        Task {
-            let localPhotos = await self.getPhotosFromLocal()
-            if !localPhotos.isEmpty {
-                self.currentPage += 1
-                completion(.success(localPhotos))
-            } else {
-                completion(.failure(.noData))
-            }
+        let localPhotos = self.getPhotosFromLocal()
+        if !localPhotos.isEmpty {
+            self.currentPage += 1
+            self.photos = localPhotos
+            completion(.success(()))
+        } else {
+            completion(.failure(.noData))
         }
     }
     
-    func getPhotosFromLocal() async -> [GalleryPhoto] {
+    func getPhotosFromLocal() -> [GalleryPhoto] {
         do {
             return try localStorageManager.fetchPhotos(page: currentPage, pageSize: 10)
         } catch {

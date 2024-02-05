@@ -55,6 +55,7 @@
 		55E195AD2B6DA1DA00922FBB /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195AC2B6DA1DA00922FBB /* BaseNetworkService.swift */; };
 		55E195AF2B6DB30800922FBB /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E195AE2B6DB30700922FBB /* ConnectivityService.swift */; };
 		55EC997C2B6FFF1900C352DE /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */; };
+		55F0FCF82B711DFA001DE296 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0FCF72B711DFA001DE296 /* UICollectionView+Extensions.swift */; };
 		837B9905863ACBEBF1E10C46 /* Pods_photo_gallery_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5026CF3B91EDE0C264F503F /* Pods_photo_gallery_challengeTests.framework */; };
 		D6D10E3AC30C23AB45466B2D /* Pods_photo_gallery_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB60AE2BF9FE80DD5FC2805C /* Pods_photo_gallery_challenge.framework */; };
 /* End PBXBuildFile section */
@@ -129,6 +130,7 @@
 		55E195AC2B6DA1DA00922FBB /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		55E195AE2B6DB30700922FBB /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
 		55EC997B2B6FFF1900C352DE /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		55F0FCF72B711DFA001DE296 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		8E430BF2F18118FD2D501A10 /* Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-photo-gallery-challenge-photo-gallery-challengeUITests/Pods-photo-gallery-challenge-photo-gallery-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAAFD2D9DA2A835D771D1D57 /* Pods-photo-gallery-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-gallery-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-photo-gallery-challengeTests/Pods-photo-gallery-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB60AE2BF9FE80DD5FC2805C /* Pods_photo_gallery_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_gallery_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,6 +366,7 @@
 				55AE44F52B6EA99F001547F5 /* Describable.swift */,
 				5592E4A82B6EB45600CF8BDC /* UIViewController+Extensions.swift */,
 				5596FE072B7058F80076DED6 /* FileManager+Extensions.swift */,
+				55F0FCF72B711DFA001DE296 /* UICollectionView+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -413,7 +416,6 @@
 				55E195A82B6DA0EF00922FBB /* NetworkManager.swift */,
 				55E195AC2B6DA1DA00922FBB /* BaseNetworkService.swift */,
 				55E195AE2B6DB30700922FBB /* ConnectivityService.swift */,
-				5596FE0E2B707A770076DED6 /* VoidRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -421,6 +423,7 @@
 		55E195A22B6D9D3800922FBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5596FE0E2B707A770076DED6 /* VoidRequest.swift */,
 				55E195A62B6D9DAA00922FBB /* GalleryPhoto.swift */,
 			);
 			path = Models;
@@ -708,6 +711,7 @@
 				55E195A92B6DA0EF00922FBB /* NetworkManager.swift in Sources */,
 				55964EF72B6C670C00C41B26 /* HomeInterfaces.swift in Sources */,
 				5592E4A92B6EB45600CF8BDC /* UIViewController+Extensions.swift in Sources */,
+				55F0FCF82B711DFA001DE296 /* UICollectionView+Extensions.swift in Sources */,
 				5592E4AB2B6EC08100CF8BDC /* LoadingScreen.swift in Sources */,
 				5592E4B42B6EE85B00CF8BDC /* DetailRouter.swift in Sources */,
 				554CFF4B2B6E98E800D63C5E /* GalleryPhotoLocal+CoreDataClass.swift in Sources */,
